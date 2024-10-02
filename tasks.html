@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬山徹のタスク管理</title>
+  <script>
+    function displayDate() {
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1; // 月は0から始まるので+1
+      var day = now.getDate();
+      var formattedDate = year + "年" + month + "月" + day + "日";
+      document.getElementById("currentDate").innerHTML = formattedDate;
+    }
+  </script>
+</head>
+<body onload="displayDate()>
+    <h1>冬山徹の <span id="currentDate"></span> 現在のタスク状況 </h1>
+    <p>わざわざ見にきてくれてありがとう。冬山徹の現状をご覧ください。</p>
+</body>
+</html>
