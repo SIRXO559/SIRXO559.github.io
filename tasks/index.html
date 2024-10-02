@@ -15,24 +15,107 @@
         }
     </script>
     <style>
-        .red-box {
-            width: 200px;          /* 四角形の横幅 */
-            height: 200px;         /* 四角形の高さ */
-            background-color: red; /* 背景色を赤に指定 */
-            color: white;          /* 文字色を白に指定 */
-            display: flex;         /* 中央に文字を配置するためにフレックスボックスを使用 */
-            justify-content: center; /* 水平方向に中央寄せ */
-            align-items: center;    /* 垂直方向に中央寄せ */
-            font-size: 20px;       /* 文字サイズを指定 */
-            border: 2px solid black; /* 黒い枠線を追加 */
+        .container {
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr 1fr;
+            gap: 0px;
         }
+        .r-box {
+            width: 200px;        
+            height: 100px;     
+            background-color: red;
+            color: white;    
+            display: flex;     
+            justify-content: center; 
+            align-items: center;    
+            font-size: 20px;     
+            flex-direction: column; 
+            padding: 2px; 
+            box-sizing: border-box;
+            /*border: 2px solid black;  */
+        }
+        .y-box {
+            width: 200px;        
+            height: 100px;     
+            background-color: orange;
+            color: white;    
+            display: flex;     
+            justify-content: center; 
+            /*align-items: center; */   
+            font-size: 20px;     
+            flex-direction: column; 
+            padding: 2px; 
+            box-sizing: border-box;
+            /*border: 2px solid black;  */
+        }
+        .g-box {
+            width: 200px;        
+            height: 100px;     
+            background-color: green;
+            color: white;    
+            display: flex;     
+            justify-content: center; 
+            /*align-items: center;   */ 
+            font-size: 20px;    
+            flex-direction: column; 
+            padding: 2px; 
+            box-sizing: border-box;
+            /*border: 2px solid black;  */
+        }
+        .t-box {
+            width: 200px;
+            height: 100px;
+            background-color: transparent;
+        }
+        .tl {
+            text-align: left;
+        }
+        .tc {
+            text-align: center;
+        } 
     </style>
 </head>
-<body onload="displayDate()>
-    <h1>冬山徹の <span id="currentDate"></span> 現在のタスク状況 </h1>
-    <p>わざわざ見にきてくれてありがとう。冬山徹の現状をご覧ください。</p>
-    <div class="red-box">
-        木1出席
+<body onload="displayDate()">
+    <h1> 冬山徹の <span id="currentDate"></span> のタスク状況 </h1>
+    <p>各タスクに赤色・黄色・緑色のトリアージをつけています。締切の近さ/重要性/やりたさが大きい時が赤です。</p>
+    <p>支障があってはっきり書くことができない語句は<b>動物の鳴き声</b>で置き換えています。</p>
+    <div class="container">
+        <div class="r-box">グァッグァッにメールを送る</div>
+        <div class="y-box" style="font-size: 15px">
+            <span class="tc">『固体電子の量子論』購入</span>
+        </div>
+        <div class="g-box">
+            <span class="tc">相転移(熱力学)の復習 </span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="t-box"></div>
+        <div class="y-box" style="font-size: 20px;">Quantum Scarsの<br>レビュー論文読む</div>
+        <div class="g-box">
+            10/5 <br> 
+            <span class="tc">ゼミ予習</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="t-box"></div>
+        <div class="t-box"></div>
+        <div class="g-box">
+            ~10/7 <br> <span class="tc">定期券購入</span>
+        </div>
+    </div>
+    <h1> 未分類タスク </h1>
+    11/29 23:59 生物物理学レポート（前半）提出
+    <h1> 終了済みタスク </h1>
+    <p>期限までに成功したタスクは元のトリアージの色で、失敗したor諦めたタスクは黒色で表示しています。</p>
+    <div class="container">
+        <div class="r-box">
+            9/30 <br> TOEFL申し込み
+        </div>
+    </div>
+    <div class="container"></div>
+        <div class="g-box">
+            10/2 <br> 物理数学3 出席
+        </div>
     </div>
 </body>
 </html>
